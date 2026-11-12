@@ -1,0 +1,9 @@
+.title{
+	font-family: "Helvetica";
+}
+
+.textarea {
+	field-sizing: content;
+	width: 99%;
+	height: 450px;
+}
