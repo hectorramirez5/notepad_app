@@ -1,0 +1,5 @@
+.textarea {
+	field-sizing: content;
+	width: 99%;
+	height: 500px;
+}
