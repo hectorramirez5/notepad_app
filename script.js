@@ -14,32 +14,20 @@ field.addEventListener("input", () => {
 });
 
 // Save button
-document.getElementById("save_button").addEventListener("click", async () => {
-  const text = localStorage.getItem("myText");
+document.getElementById("save_button").addEventListener("click", () => {
+	const text = localStorage.getItem("myText");
+		
+	if (!text) {
+		alert("nothing to save.");
+		return;
+	}
 
-  if (!text) {
-    alert("nothing to save.");
-    return;
-  }
+	const blob = new Blob([text], { type: "text/plain" });
+	const url = URL.createObjectURL(blob);
 
-  const file = new File([text], "my-text.txt", { type: "text/plain" });
-
-  if (navigator.canShare && navigator.canShare({ files: [file] })) {
-    try {
-      await navigator.share({ files: [file] });
-      return;
-    } catch (e) {
-      if (e.name === "AbortError") return;
-    }
-  }
-
-  // Desktop fallback
-  const url = URL.createObjectURL(new Blob([text], { type: "text/plain" }));
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = "my-text.txt";
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
-  URL.revokeObjectURL(url);
+	const a = document.createElement("a");
+	a.href = "data:text/plain; charset=utf-8," + encodeURIComponent(text);
+	a.download = "my-text.txt";
+	document.body.appendChild(a);
+	a.click();
 });
