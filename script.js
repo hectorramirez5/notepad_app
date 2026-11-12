@@ -18,7 +18,7 @@ document.getElementById("save_button").addEventListener("click", () => {
 	const text = localStorage.getItem("myText");
 		
 	if (!text) {
-		alert("nothing to save.");
+		alert("Nothing to save.");
 		return;
 	}
 
