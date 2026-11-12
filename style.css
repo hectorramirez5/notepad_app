@@ -1,3 +1,14 @@
+body {
+	display: flex;
+}
+
+.container {
+	field-sizing: content;
+	font-family: "Helvetica";
+	width: 99%;
+	height: 450px;
+}
+
 .title{
 	font-family: "Helvetica";
 	text-align: center;
