@@ -1,9 +1,15 @@
 .title{
 	font-family: "Helvetica";
+	text-align: center;
 }
 
 .textarea {
 	field-sizing: content;
+	font-family: "Helvetica";
 	width: 99%;
 	height: 450px;
+}
+
+.savebutton {
+	font-family: "Helvetica";
 }
