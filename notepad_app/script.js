@@ -22,11 +22,11 @@ document.getElementById("save_button").addEventListener("click", () => {
 		return;
 	}
 
-	const blob = new Blob([text], { type: "text/plain" });
+	const blob = new Blob([text], { type: "application/octet-stream" });
 	const url = URL.createObjectURL(blob);
 
 	const a = document.createElement("a");
-	a.href = "data:text/plain; charset=utf-8," + encodeURIComponent(text);
+	a.href = "url";
 	a.download = "my-text.txt";
 	document.body.appendChild(a);
 	a.click();
