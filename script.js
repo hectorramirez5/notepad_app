@@ -26,7 +26,7 @@ document.getElementById("save_button").addEventListener("click", () => {
 	const url = URL.createObjectURL(blob);
 
 	const a = document.createElement("a");
-	a.href= url;
+	a.href= "data:text/plain; charset=utf-8," + encodeURIComponent(text);
 	a.download = "my-text.txt";
 	document.body.appendChild(a);
 	a.click();
